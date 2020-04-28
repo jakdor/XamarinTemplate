@@ -1,0 +1,25 @@
+﻿key;en;pl;ro
+AppName;TMS Mobile;TMS Mobile;TMS Mobile
+LangName;Language list;Lista języków;Lista limbi
+LangName.en;English;English;English
+LangName.pl;Polski;Polski;Polski
+LangName.ro;Română;Română;Română
+LoginButton;Log in;Zaloguj się;Logare
+LoginLanguageLabel;Language:;Język:;Limba:
+LoginUserPlaceholder;login;login;Autentificare
+LoginPassPlaceholder;password;hasło;Parola
+LoginEmailPlaceholder;email;email;Email
+LoginRecoverPass;Recover password;Odzyskaj hasło;Recuperare parola
+LoginSaveCheckBox;Remember me;Zapamiętaj mnie;Tine minte
+LoginTitle;Toya B2B;Toya B2B;Toya B2B
+LoginGuestButton;Browse without logging in;Przeglądaj bez logowania;Căutați fără a vă autentifica
+EmptyField;This field can't be empty;To pole nie może byc puste;Acest câmp nu poate fi gol
+LoginStatusToast.error;Unable to login;Nie można zalogować;Nu se poate autentifica
+LoginStatusToast.unauthorized;Incorrect login or password;Niepoprawny login lub hasło;Parola sau Nume incorect
+LoginStatusToast.unauthorized2;You are not authorized, only B2B clients are allowed to access app for now;Nie zostałeś autoryzowany, jedynie klienci B2B mają obecnie dostęp do aplikacji;Nu sunteti autorizati, doar clientii B2B au acces la aplicatie in acest moment.
+LoginStatusToast.authorized;Logged in;Zalogowano;Autentificat
+ForgotPasswordTitle;Password reset form;Formularz resetowania hasła;Forma resetare parola
+ForgotPasswordSendButton;Reset password;Zresetuj hasło;Resetare Parola
+ForgotPasswordError;Unable to reset password;Nie można zresetować hasła;Nu se poate reseta parola
+ForgotPasswordBadData;Incorrect user data;Błędne dane użytkownika;Date incorecte ale utilizatorilor
+ForgotPasswordSuccess;Check your email and follow instruction to reset password;Sprawdź skrzynkę email i postępuj zgodnie z instrukcją by zresetować hasło;Verificati email-ul si urmati intructiunile pentru resetarea parolei.

@@ -56,14 +56,29 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="DI\DependencyContainer.cs" />
+    <Compile Include="DI\DependencyService\ConnectionStatusRepository.cs" />
+    <Compile Include="DI\DependencyService\DeviceLog.cs" />
+    <Compile Include="DI\DependencyService\DeviceStorageRepository.cs" />
+    <Compile Include="DI\DependencyService\PackageInfoRepository.cs" />
+    <Compile Include="DI\Modules\DeviceDependencyServiceModule.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Base\BaseActivity.cs" />
+    <Compile Include="UI\Base\BaseCustomDialog.cs" />
+    <Compile Include="UI\Base\BaseFragment.cs" />
+    <Compile Include="UI\Base\IBaseFragmentContract.cs" />
+    <Compile Include="UI\LoginActivity.cs" />
+    <Compile Include="UI\Login\ILoginFragmentContract.cs" />
+    <Compile Include="UI\Login\LoginFragment.cs" />
+    <Compile Include="UI\Login\ResetPassDialog.cs" />
+    <Compile Include="UI\MainActivity.cs" />
+    <Compile Include="UI\SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
-    <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.axml">
@@ -93,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac">
-      <Version>5.1.4</Version>
+      <Version>4.9.4</Version>
     </PackageReference>
     <PackageReference Include="CrossPlatformLiveData">
       <Version>1.0.2</Version>
@@ -101,7 +116,73 @@
     <PackageReference Include="CrossPlatformLiveData.Android">
       <Version>1.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
+      <Version>1.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Constraint.Layout.Solver">
+      <Version>1.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.Fragment">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_login.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.XF\App.XF.csproj">
+      <Project>{AD263456-68E3-4BCE-8509-A11C6572E6AB}</Project>
+      <Name>App.XF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_splash.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\dialog_reset_pass.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_login.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_spinner.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\circular_progress_bar.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_cancel.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_email.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_lock.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_user.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spinner_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

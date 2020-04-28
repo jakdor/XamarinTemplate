@@ -4,4 +4,34 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\copyright.txt" />
+    <None Remove="Resources\Locales\localeManifest.txt" />
+    <None Remove="Resources\Locales\resources.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\copyright.txt" />
+    <EmbeddedResource Include="Resources\Locales\localeManifest.txt" />
+    <EmbeddedResource Include="Resources\Locales\resources.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="CrossPlatformLiveData" Version="1.0.2" />
+    <PackageReference Include="I18NPortable" Version="0.6.0-dev" />
+    <PackageReference Include="I18NPortable.CsvReader" Version="1.0.0-dev" />
+    <PackageReference Include="System.Reactive" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App.Web\App.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

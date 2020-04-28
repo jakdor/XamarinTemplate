@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@+id/reset_pass_close"
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginStart="8dp"
+      android:foreground="?android:attr/selectableItemBackground"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/ic_cancel"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/reset_pass_header"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="Rest_pass_header_placeholder"
+      android:textSize="18sp"
+      android:textColor="@color/fontBlack"
+      app:layout_constraintBottom_toBottomOf="@+id/reset_pass_close"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/reset_pass_close"
+      app:layout_constraintTop_toTopOf="@+id/reset_pass_close" />
+
+  <android.support.design.widget.TextInputLayout
+      android:id="@+id/reset_pass_login_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:hint="login_hint_placeholder"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/reset_pass_header">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/reset_pass_login_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="8dp"
+        android:inputType="text"
+        android:maxLines="1" />
+
+  </android.support.design.widget.TextInputLayout>
+
+  <android.support.design.widget.TextInputLayout
+      android:id="@+id/reset_pass_email_input"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:hint="login_hint_placeholder"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/reset_pass_login_input">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/reset_pass_email_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="8dp"
+        android:inputType="text"
+        android:maxLines="1" />
+
+  </android.support.design.widget.TextInputLayout>
+
+  <LinearLayout
+      android:id="@+id/reset_pass_bottom_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_marginTop="24dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/reset_pass_email_input">
+
+    <FrameLayout
+        android:id="@+id/reset_pass_progress_container"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/pageBackground"
+        android:visibility="gone">
+
+      <ProgressBar
+          android:id="@+id/reset_pass_progress"
+          android:layout_width="match_parent"
+          android:layout_height="32dp"
+          android:layout_gravity="center"
+          android:indeterminate="true"
+          android:indeterminateTint="@color/colorAccent"
+          android:progressTint="@color/colorAccent"
+          style="?android:attr/progressBarStyleHorizontal"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/reset_pass_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="center"
+        android:background="@color/lightGray"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:enabled="false"
+        android:text="reset_pass_button_placeholder"
+        android:textAllCaps="true"
+        android:textAlignment="gravity"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/fontWhite"/>
+
+  </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
