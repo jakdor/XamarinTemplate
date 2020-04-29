@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using App.Web.Rest.Network.Utils;
 
 namespace App.Web.Rest.Network
 {
@@ -78,7 +79,7 @@ namespace App.Web.Rest.Network
                 {
                     var result = await resp.Content.ReadAsStringAsync();
 
-                    Debug.WriteLine($"{msg} {string.Join("", result.Cast<char>())}...");
+                    Debug.WriteLine($"\n{string.Join("", JsonFormatter.FormatJson(result).Cast<char>())}");
                 }
             }
 
