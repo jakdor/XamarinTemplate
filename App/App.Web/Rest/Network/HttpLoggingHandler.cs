@@ -45,7 +45,7 @@ namespace App.Web.Rest.Network
                 {
                     var result = await req.Content.ReadAsStringAsync();
 
-                    Debug.WriteLine($"{msg} {string.Join("", result.Cast<char>())}...");
+                    Debug.WriteLine($"\n{string.Join("", JsonFormatter.FormatJson(result).Cast<char>())}");
                 }
             }
 
