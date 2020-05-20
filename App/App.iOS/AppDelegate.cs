@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using App.iOS.DI;
+using Foundation;
 using UIKit;
 
 namespace App.iOS
@@ -10,14 +11,16 @@ namespace App.iOS
     {
         // class-level declarations
 
-        public override UIWindow Window
-        {
-            get;
-            set;
-        }
+        public static DependencyContainer DIContainer { get; set; } = new DependencyContainer();
+
+        public override UIWindow Window { get; set; }
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            //DI setup
+            DIContainer.Init();
+            DIContainer.Build();
+
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             Window.RootViewController = new UIViewController();
@@ -57,6 +60,7 @@ namespace App.iOS
         public override void WillTerminate(UIApplication application)
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+            DIContainer.Dispose();
         }
     }
 }
