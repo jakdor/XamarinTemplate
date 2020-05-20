@@ -114,7 +114,7 @@
       <Version>1.0.2</Version>
     </PackageReference>
     <PackageReference Include="CrossPlatformLiveData.Android">
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
       <Version>1.1.2</Version>
