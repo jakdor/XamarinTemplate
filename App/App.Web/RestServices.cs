@@ -19,30 +19,30 @@ namespace App.Web
     {
 
 #if DEBUG
-        private const string ToyaMobileServiceUrl = "http://91.237.118.41:7122/B2B/";
+        private const string MobileServiceUrl = "http://91.237.118.41:7122/B2B/";
 #else
-        private const string ToyaMobileServiceUrl = "https://91.237.118.39:8080/b2b";
+        private const string MobileServiceUrl = "https://91.237.118.39:8080/b2b";
 #endif
 
-        private IMobileService _toyaMobileService;
+        private IMobileService _mobileService;
         private readonly IRefitFactory _refitFactory;
 
         /// <summary>
-        /// Build IToyaMobileService with default URL
+        /// Build IMobileService with default URL
         /// </summary>
         public RestServices(IRefitFactory refitFactory)
         {
             _refitFactory = refitFactory;
-            SetUrl(ToyaMobileServiceUrl);
+            SetUrl(MobileServiceUrl);
         }
 
         /// <summary>
-        /// Builds new IToyaMobileService instance with provided URL
+        /// Builds new IMobileService instance with provided URL
         /// </summary>
         /// <param name="url">overrides default URL</param>
         public void SetUrl(string url)
         {
-            _toyaMobileService = _refitFactory.BuildService<IMobileService>(url);
+            _mobileService = _refitFactory.BuildService<IMobileService>(url);
         }
 
         /// <summary>
@@ -143,43 +143,43 @@ namespace App.Web
 
         /// <summary>
         /// Login endpoint
-        /// Makes a POST call to IToyaMobileService - /api/Account/Login
+        /// Makes a POST call to IMobileService - /api/Account/Login
         /// </summary>
         /// <param name="login">user login</param>
         /// <param name="password">user password</param>
         /// <returns>IObservable&lt;LoginResult&gt;</returns>
         public IObservable<LoginResult> PostLogin(string login, string password)
         {
-            return _toyaMobileService.PostLogin(new LoginModel(login, password));
+            return _mobileService.PostLogin(new LoginModel(login, password));
         }
 
         /// <summary>
         /// Forgot password endpoint
-        /// Makes a POST call to IToyaMobileService - /api/Account/ForgotPassword
+        /// Makes a POST call to IMobileService - /api/Account/ForgotPassword
         /// </summary>
         /// <param name="login">user login</param>
         /// <param name="email">account registration email</param>
         /// <returns>IObservable&lt;ForgotPasswordResult&gt;</returns>
         public IObservable<ForgotPasswordResult> PostForgotPassword(string login, string email)
         {
-            return _toyaMobileService.PostForgotPassword(new ForgotPasswordModel(login, email));
+            return _mobileService.PostForgotPassword(new ForgotPasswordModel(login, email));
         }
 
         /// <summary>
         /// Bearer token refresh endpoint
-        /// Makes a POST call to IToyaMobileService - /api/Account/Refresh
+        /// Makes a POST call to IMobileService - /api/Account/Refresh
         /// </summary>
         /// <param name="login">user login</param>
         /// <param name="refreshToken">refresh token provided from login response</param>
         /// <returns>IObservable&lt;TokenModel&gt;</returns>
         public IObservable<TokenModel> PostRefresh(string login, string refreshToken)
         {
-            return _toyaMobileService.PostRefresh(new TokenModel(login, refreshToken));
+            return _mobileService.PostRefresh(new TokenModel(login, refreshToken));
         }
 
         /// <summary>
         /// Product list with query endpoint
-        /// Makes a POST call to IToyaMobileService - /api/Products/list
+        /// Makes a POST call to IMobileService - /api/Products/list
         /// </summary>
         /// <param name="productQuery">ProductQueryModel - defines product query parameters</param>
         /// <param name="login">user login</param>
@@ -188,7 +188,7 @@ namespace App.Web
         public IObservable<IList<ProductModel>> PostProductList(ProductQueryModel productQuery, string login,
             string token)
         {
-            return _toyaMobileService.PostProductList(productQuery, FormatAuthHeader(login, token));
+            return _mobileService.PostProductList(productQuery, FormatAuthHeader(login, token));
         }
 
         /// <summary>

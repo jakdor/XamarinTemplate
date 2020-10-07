@@ -1,5 +1,5 @@
 ﻿key;en;pl;ro
-AppName;TMS Mobile;TMS Mobile;TMS Mobile
+AppName;Example Mobile;Example Mobile;Example Mobile
 LangName;Language list;Lista języków;Lista limbi
 LangName.en;English;English;English
 LangName.pl;Polski;Polski;Polski
@@ -11,7 +11,7 @@ LoginPassPlaceholder;password;hasło;Parola
 LoginEmailPlaceholder;email;email;Email
 LoginRecoverPass;Recover password;Odzyskaj hasło;Recuperare parola
 LoginSaveCheckBox;Remember me;Zapamiętaj mnie;Tine minte
-LoginTitle;Toya B2B;Toya B2B;Toya B2B
+LoginTitle;Example;Example;Example
 LoginGuestButton;Browse without logging in;Przeglądaj bez logowania;Căutați fără a vă autentifica
 EmptyField;This field can't be empty;To pole nie może byc puste;Acest câmp nu poate fi gol
 LoginStatusToast.error;Unable to login;Nie można zalogować;Nu se poate autentifica
